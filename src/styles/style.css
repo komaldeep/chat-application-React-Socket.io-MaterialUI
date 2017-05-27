@@ -1,0 +1,11 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.TextArea{
+    max-height: 200px;
+    background-color: blue;
+    color: #fff;
+}
