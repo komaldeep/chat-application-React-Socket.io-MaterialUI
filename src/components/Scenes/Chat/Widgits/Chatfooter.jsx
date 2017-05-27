@@ -4,6 +4,9 @@ import Paper from 'material-ui/Paper';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import {Card} from 'material-ui/Card';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import baseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
+
 
 export default class Chatfooter extends Component{
 
@@ -74,6 +77,15 @@ export default class Chatfooter extends Component{
         );
 
 
+    }
+    static childContextTypes = {
+        muiTheme: React.PropTypes.object
+    };
+
+    getChildContext(){
+        return {
+            muiTheme: getMuiTheme(baseTheme)
+        }
     }
 }
 

@@ -19,7 +19,7 @@ import configureStore from './components/store/index';
 const store = configureStore();
 
 // Pages of the project
-import chatconatiner from './components/Scenes/Chat/Index';
+import Chatconatiner from './components/Scenes/Chat/Index';
 
 
 
@@ -27,7 +27,7 @@ render(
     <MuiThemeProvider muiTheme={getMuiTheme()}>
         <Provider store={store}>
             <Router history={browserHistory}>
-                <Route path="/" component={chatconatiner}>
+                <Route path="/" component={Chatconatiner}>
                     {/*<Route path="Posts" component={Post} />*/}
                 </Route>
             </Router>

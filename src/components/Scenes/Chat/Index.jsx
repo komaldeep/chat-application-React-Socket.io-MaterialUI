@@ -11,7 +11,7 @@ import Chatfooter from './Widgits/Chatfooter';
 import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
 
 
-class Index extends Component{
+export default class Chatconatiner extends Component{
 
     constructor (props) {
         super(props)
@@ -111,22 +111,3 @@ class Index extends Component{
         }
     }
 }
-
-function mapStateToProps(store) {
-    return { posts: store.posts};
-}
-
-function mapDispatchToProps(dispatch) {
-    return bindActionCreators({
-
-    }, dispatch);
-}
-
-
-const chatconatiner = connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(Index)
-
-export default chatconatiner;
-

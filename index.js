@@ -32,7 +32,7 @@ io.on('connection', socket => {
     socket.on('message', body => {
         socket.broadcast.emit('message', {
             body,
-            from: "Stranger"+socket.id.slice(4)
+            from: "Stranger"+ socket.id.slice(4)
         })
     })
 })
