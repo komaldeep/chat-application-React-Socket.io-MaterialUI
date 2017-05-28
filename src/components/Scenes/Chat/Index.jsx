@@ -73,8 +73,8 @@ export default class Chatconatiner extends Component{
     render(){
 
         const style = {
-            height:"600px",
-            maxHeight:"600px",
+            height:"550px",
+            maxHeight:"550px",
             overflowY:"auto",
         };
 

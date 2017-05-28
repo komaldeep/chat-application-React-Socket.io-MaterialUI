@@ -9,7 +9,7 @@ describe('<Chatconatiner />', () => {
         expect(component).to.have.length(1);
     });
 
-    it('this.state.messages equal to []', () => {
+    it('this.state.messages equal to [] at initialising', () => {
         expect(component.state("messages")).to.eql([]);
     });
 

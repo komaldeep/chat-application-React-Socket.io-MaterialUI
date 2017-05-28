@@ -13,7 +13,7 @@ describe('<Chatfooter/>', () => {
         })
     });
 
-    it('Chatfooter is defined', () => {
+    it('Chatfooter should be defined', () => {
         expect(component).to.have.length(1);
     });
 
@@ -25,13 +25,22 @@ describe('<Chatfooter/>', () => {
         expect(component.find('RaisedButton')).to.have.length(1);
     });
 
-    it('Send button works properly', () => {
+    it('Send button should works properly', () => {
         component.find('RaisedButton').simulate('click');
         component.props('send_button_submit(component.state(textFieldValue)');
         component.setState({
             textFieldValue:""
         })
         expect(component.state("textFieldValue")).to.eql('');
+    });
+
+    it('onchange event on text field should work', () => {
+        component.find('TextField').simulate('change',component.setState({
+            textFieldValue: 'heyo'
+        }));
+
+        expect(component.state("textFieldValue")).to.equal('heyo');
+
     });
 
 });

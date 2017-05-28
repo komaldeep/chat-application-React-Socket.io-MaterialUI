@@ -75,9 +75,8 @@ export default class Chatfooter extends Component{
 
             </div>
         );
-
-
     }
+
     static childContextTypes = {
         muiTheme: React.PropTypes.object
     };

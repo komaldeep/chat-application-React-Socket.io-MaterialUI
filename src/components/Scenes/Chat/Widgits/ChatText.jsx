@@ -2,7 +2,8 @@ import React, {Component} from "react";
 import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
 import FlatButton from 'material-ui/FlatButton';
 import Divider from 'material-ui/Divider';
-
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import baseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
 
 export default class ChatText extends Component{
 
@@ -12,8 +13,6 @@ export default class ChatText extends Component{
 
         }
     }
-
-
 
     render(){
         const style = {
@@ -32,6 +31,15 @@ export default class ChatText extends Component{
                 </Card>
             </div>
         );
+    }
+    static childContextTypes = {
+        muiTheme: React.PropTypes.object
+    };
+
+    getChildContext(){
+        return {
+            muiTheme: getMuiTheme(baseTheme)
+        }
     }
 }
 
