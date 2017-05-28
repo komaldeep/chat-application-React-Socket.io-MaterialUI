@@ -1,14 +1,14 @@
 import React, {Component} from "react";
-import {Link} from "react-router";
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
+// import {Link} from "react-router";
+// import { connect } from 'react-redux';
+// import { bindActionCreators } from 'redux';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import baseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
 import io from 'socket.io-client';
 import NavigationHeader from './../../AppComponent/NavigationHeader';
 import ChatText from './Widgits/ChatText';
 import Chatfooter from './Widgits/Chatfooter';
-import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
+import {Card} from 'material-ui/Card';
 
 
 export default class Chatconatiner extends Component{
@@ -17,7 +17,6 @@ export default class Chatconatiner extends Component{
         super(props)
         this.state = {
             messages: [],
-            email:"komaldeep1993@gmail.com",
         }
     }
 
@@ -29,6 +28,7 @@ export default class Chatconatiner extends Component{
 
     }
 
+    // For sending message by clicking enter
     enter_Submit(event) {
         const body = event.target.value
         if (event.keyCode === 13 && body) {
@@ -42,6 +42,7 @@ export default class Chatconatiner extends Component{
         }
     }
 
+    // For sending message by clicking send button
     sent_Submit(Message) {
         const body = Message;
         if (body != '') {
@@ -53,21 +54,6 @@ export default class Chatconatiner extends Component{
             this.socket.emit('message', body)
         }
     }
-
-    // scrollToBottom() {
-    //     const {messagesContainer} = this.refs;
-    //
-    //     // messagesContainer = ReactDOM.findDOMNode(this.messagesContainer);
-    //     messagesContainer.scrollTop = messagesContainer.scrollHeight - messagesContainer.clientHeight;
-    // }
-
-    // componentDidMount() {
-    //     this.scrollToBottom.bind(this);
-    // }
-    //
-    // componentDidUpdate() {
-    //     this.scrollToBottom.bind(this);
-    // }
 
 
     render(){
@@ -84,8 +70,7 @@ export default class Chatconatiner extends Component{
                 <NavigationHeader />
 
                     <Card
-                        style={style}
-                        ref="messagesContainer" >
+                        style={style} >
                         {
                             this.state.messages.map((messages, i) => {
                                 return ( <ChatText key={i} chat_messages = {messages} /> )

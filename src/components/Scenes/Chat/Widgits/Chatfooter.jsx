@@ -17,6 +17,8 @@ export default class Chatfooter extends Component{
         }
     }
 
+    // sending message by keypress of enter in keyboard
+    //then calling the value of props on roor index.jsx file
     Enter_Submit(event){
         this.props.submitmessage(event);
         if (event.keyCode == 13) {
@@ -27,6 +29,9 @@ export default class Chatfooter extends Component{
         }
     }
 
+    // sending message by clicking on button and then calling the props on
+    // root(Index.jsx) file
+
     SendMessage(){
         this.props.send_button_submit(this.state.textFieldValue);
         this.setState({
@@ -34,6 +39,7 @@ export default class Chatfooter extends Component{
         })
     }
 
+    //for getting the value of textfield input value
     _handleTextFieldChange(e){
         this.setState({
             textFieldValue: e.target.value
@@ -57,6 +63,7 @@ export default class Chatfooter extends Component{
             <div className="">
 
                 <Card style={style}>
+
                     <TextField
                         ref="message"
                         hintText="Enter a message..."
@@ -71,6 +78,7 @@ export default class Chatfooter extends Component{
                         label="Send"
                         onTouchTap={this.SendMessage.bind(this)}
                     />
+
                 </Card>
 
             </div>

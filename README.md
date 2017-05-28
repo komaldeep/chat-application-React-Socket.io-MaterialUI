@@ -1,4 +1,4 @@
-Socket.io chat application with react and firebase.
+Socket.io chat application with react and Material UI.
 
 Architecture - 
 Path - src/component/AppComponent - Here you can add universal components which can be used all over your application.
